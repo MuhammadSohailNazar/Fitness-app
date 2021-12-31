@@ -1,24 +1,30 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
-import { AuthModule } from "../auth/auth.module";
 
 import { Store } from "store";
 
 // feature modules
+import { AuthModule } from "../auth/auth.module";
+import { HealthModule } from "../health/health.module";
 
 // containers
 import { AppComponent } from "./containers/app/app.component";
-import { HeaderComponent } from "./components/header/header.component";
-import { NavComponent } from "./components/nav/nav.component";
 
 // components
+import { HeaderComponent } from "./components/header/header.component";
+import { NavComponent } from "./components/nav/nav.component";
 
 // routes
 export const ROUTES: Routes = [];
 
 @NgModule({
-  imports: [BrowserModule, AuthModule, RouterModule.forRoot(ROUTES)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(ROUTES),
+    AuthModule,
+    HealthModule,
+  ],
   declarations: [AppComponent, HeaderComponent, NavComponent],
   providers: [Store],
   bootstrap: [AppComponent],
