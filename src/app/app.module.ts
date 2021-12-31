@@ -16,7 +16,9 @@ import { HeaderComponent } from "./components/header/header.component";
 import { NavComponent } from "./components/nav/nav.component";
 
 // routes
-export const ROUTES: Routes = [];
+export const ROUTES: Routes = [
+  { path: "", pathMatch: "full", redirectTo: "schedule" },
+];
 
 @NgModule({
   imports: [
