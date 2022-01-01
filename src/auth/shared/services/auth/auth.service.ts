@@ -24,7 +24,11 @@ export class AuthService {
     this.store.set("user", user);
   });
 
-  get authState(){
+  get user() {
+    return this.af.auth.currentUser;
+  }
+  
+  get authState() {
     return this.af.authState;
   }
   constructor(private af: AngularFireAuth, private store: Store) {}
@@ -36,7 +40,7 @@ export class AuthService {
     return this.af.auth.signInWithEmailAndPassword(email, password);
   }
 
-  logout(){
+  logout() {
     return this.af.auth.signOut();
   }
 }
