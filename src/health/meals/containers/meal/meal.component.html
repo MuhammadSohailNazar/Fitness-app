@@ -1,1 +1,11 @@
-<div class="meal">i am a meal.</div>
+<div class="meal">
+  <div class="meal__title">
+    <h1>
+      <img src="/img/food.svg" alt="food icon" />
+      <span>Create Meal</span>
+    </h1>
+  </div>
+  <div>
+      <Meal-Form (create)="addMeal($event)"></Meal-Form>
+  </div>
+</div>
